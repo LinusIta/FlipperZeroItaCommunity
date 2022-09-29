@@ -65,8 +65,6 @@ Purtroppo attualmente questa procedura non va a buon fine in quanto la memoria d
 
 Per ovviare a ciò basta lavorare con dei file più piccoli (ad 8bit) che il Flipper riesce a gestire senza problemi.
 
-Nel file <b>sub_file.rar</b> troverete i file della versione originale dei file della repo https://github.com/tobiabocchi/flipperzero-bruteforce con all'interno già generate anche le cartelle a 64, 32, 16 e 8 bit.
-
 Si prosegue quindi seguendo il metodo sopra descritto dal 128 a scendere fino a ricavare il file a 8 bit che potrà essere quindi inviato tramite il menu decode che arriverà al 100% senza stavolta causare crash riuscendo quindi a decodificare correttamente le 8 key.
     
 <div align=center><img src="images/displaydecodeok.jpg" alt="displaykeyok" width="200"/></div>
@@ -75,36 +73,6 @@ Sarà sufficiente quindi mandare singolarmente le 8 chiavi decodificate e salvar
     
 <div align=center><img src="images/displaykey.jpg" alt="displaykey" width="200"></div>
 
-Troverete allegato anche il file <b>flipperzero-bruteforce.py</b> preso da https://github.com/tobiabocchi/flipperzero-bruteforce e modificato per generare sottocartelle fino ad 8 bit.
 
-Per quanto riguarda invece l'aggiunta di nuovi protocolli è molto semplice: all'interno dello script py i protocolli sono definiti in fondo, all'interno dell'elenco dei protocolli
-
-```
-protocols = [
-
-    Protocol("CAME", 12, {"0": "-320 640 ", "1": "-640 320 "}, "-11520 320 "),
-    
-    Protocol("NICE", 12, {"0": "-700 1400 ", "1": "-1400 700 "}, "-25200 700 "),
-    
-    Protocol("8bit", 8,  {"0": "200 -400 ", "1": "400 -200 "}),  # generic 8 bit protocol
-    
-    ...
-    
-]
-```
-
-Un protocollo è definito da alcuni parametri passati al costruttore nel seguente ordine:
-
-- nome: il nome del protocollo
-- n_bits: il numero di bit per una singola chiave
-- transposition_table: come vengono tradotti gli 0 e gli 1 nel linguaggio flipper subghz .sub
-- pilot_period: (preamble) uno schema ricorrente all'inizio di ogni chiave, inesistente per default
-- stop_bit: uno schema ricorrente alla fine di ogni chiave, inesistente per default
-- frequenza: frequenza di lavoro, il valore predefinito è 433.92
-- ripetizione: numero di trasmissioni per chiave nel brute force
-
-# Download file necessari
-- [flipperzero-bruteforce.py](flipperzero-bruteforce.py)
-- [sub_files.rar](sub_files.rar)
 
 
