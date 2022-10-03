@@ -5,3 +5,12 @@ Frequency: 314350000
 
 
 Telegram: https://t.me/FlipperItalia
+
+
+Play the single file (4096/ folder) to make sure the attack works
+
+Play the two files inside 2048/ folder, to see which half contains the correct key (suppose the second one works, 000_001.sub containing keys from 2048 4095)
+
+Play its children (001_002.sub, 001_003.sub) inside the 1024/ folder to narrow the search
+
+Keep doing this until you reach the last files inside the 128/ folder, these files take less than 10 seconds to send, almost the same as having the actual remote.
